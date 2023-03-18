@@ -1,0 +1,13 @@
+{
+	"navigationFallback": {
+		"rewrite": "/index.html",
+		"exclude": ["*.{css,sccs,js,png,gif,ico,jpg,svg}"]
+	},
+	"routes": [
+	  {
+		"route":"/data",
+		"redirect":"/contact",
+		"statusCode": 301
+	  }
+	]
+}
