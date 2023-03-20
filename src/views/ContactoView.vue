@@ -14,7 +14,7 @@ export default {
     };
   },
   async mounted() {
-    const { text } = await (await fetch("/api/SPAAPI")).json();
+    const { text } = await (await fetch("/api/info")).json();
     this.message = text;
   }
 };
