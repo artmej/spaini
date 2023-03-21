@@ -37,8 +37,7 @@ export default {
     },
     async created() {
         this.userInfo = await this.getUserInfo();
-    },
-    components: { text }
+    }
 };
 </script>
 
