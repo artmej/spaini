@@ -1,6 +1,16 @@
-<script>
-import { text } from 'body-parser';
+<template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/contacto">Contacto</router-link>|
+    <a v-if="!userInfo" :href="`/.auth/login/github?post_login_redirect_uri=${redirect}`"> Login </a>
+    <a v-if="userInfo" :href="`/.auth/logout`"> Logout </a> |
+    <p v-if="userInfo"> {{ userInfo.userDetails }} </p>
+  </nav>
+  <router-view/>
+</template>
 
+<script>
 export default {
     data() {
         return {
@@ -31,18 +41,6 @@ export default {
     components: { text }
 };
 </script>
-
-<template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/contacto">Contacto</router-link>|
-    <a v-if="!userInfo" :href="`/login/github?post_login_redirect_uri=${redirect}`"> Login </a>
-    <a v-if="userInfo" :href="`/logout`"> Logout </a> |
-    <p v-if="userInfo"> {{ userInfo.userDetails }} </p>
-  </nav>
-  <router-view/>
-</template>
 
 <style>
 #app {
