@@ -16,6 +16,14 @@
 	  {
 		"route": "/logout",
 		"redirect": "/.auth/logut"
+	  },
+	  {
+		"route": "/api/*",
+		"allowedRoles": ["authenticated"]
+	  },
+	  {
+		"route": "/contact",
+		"allowedRoles": ["authenticated"]
 	  }
 	]
 }
