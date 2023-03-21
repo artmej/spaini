@@ -4,8 +4,11 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/contacto">Contacto</router-link>|
     <a v-if="!userInfo" :href="`/.auth/login/github?post_login_redirect_uri=${redirect}`"> Login </a>
-    <a v-if="userInfo" :href="`/.auth/logout`"> Logout </a> |
-    <p v-if="userInfo"> {{ userInfo.userDetails }} </p>
+    <template v-if="userInfo">
+        <a v-if="userInfo" :href="`/.auth/logout`"> Logout </a> |
+        {{ userInfo.userDetails }} 
+    </template>
+
   </nav>
   <router-view/>
 </template>
