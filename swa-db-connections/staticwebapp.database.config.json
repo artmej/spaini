@@ -29,8 +29,11 @@
     }
   },
   "entities": {
-    "Cosa": {
-      "source": "MyTestPersonTable",
+    "Person": {
+      "source": "dbo.MyTestPersonTable",
+      "rest": {
+         "path" :"person"
+      },
       "permissions": [
         {
           "actions": ["*"],
