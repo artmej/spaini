@@ -3,10 +3,10 @@
   "data-source": {
     "database-type": "cosmosdb_nosql",
     "options": {
-      "database": "todolist",
+      "database": "ToDoList",
       "schema": "staticwebapp.database.schema.gql"
     },
-    "connection-string": "@env('DATABASE_CONNECTION_STRING')"
+    "connection-string": "AccountEndpoint=https://cos-ca-spa-001.documents.azure.com:443/;AccountKey=wiJLVO2Iw3PE1bBdxkOxkNHvThMvv4EEI04bgcifXHONqdT43ZWxS3Tw7o7sVC12AQfO06NLWZFDACDbe0xEtA==;"
   },
   "runtime": {
     "graphql": {
@@ -27,7 +27,7 @@
   },
   "entities": {
     "Item": {
-      "source": "dbo.todolist",
+      "source": "dbo.ToDoList",
       "permissions": [
         {
           "actions": ["create", "read", "update", "delete"],
