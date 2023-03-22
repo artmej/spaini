@@ -16,24 +16,24 @@
     <script>
       async function list() {
 
-const query = `
-{
-      cosas {
-        items {
-          id
-          nombre
+        const query = `
+      {
+        cosa {
+          items {
+            Id
+            Name
+          }
         }
-      }
-    }`;
-    
-const endpoint = "/data-api/graphql";
-const response = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query: query })
-});
-const result = await response.json();
-console.table(result.data.cosas.items);
+      }`;
+
+  const endpoint = "/data-api/graphql";
+  const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: query })
+  });
+  const result = await response.json();
+  console.table(result.data.cosa.items);
 }
     </script>
   </body>

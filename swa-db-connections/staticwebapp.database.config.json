@@ -1,14 +1,17 @@
 {
   "$schema": "https://dataapibuilder.azureedge.net/schemas/v0.5.34/dab.draft.schema.json",
   "data-source": {
-    "database-type": "cosmosdb_nosql",
+    "database-type": "mssql",
     "options": {
-      "database": "ToDoList",
-      "schema": "staticwebapp.database.schema.gql"
+      "set-session-context": false
     },
-    "connection-string": "AccountEndpoint=https://cos-ca-spa-001.documents.azure.com:443/;AccountKey=wiJLVO2Iw3PE1bBdxkOxkNHvThMvv4EEI04bgcifXHONqdT43ZWxS3Tw7o7sVC12AQfO06NLWZFDACDbe0xEtA==;"
+    "connection-string": "@env('DATABASE_CONNECTION_STRING')"
   },
   "runtime": {
+    "rest": {
+      "enabled": true,
+      "path": "/rest"
+    },
     "graphql": {
       "allow-introspection": true,
       "enabled": true,
@@ -26,14 +29,15 @@
     }
   },
   "entities": {
-    "Item": {
-      "source": "Items",
+    "Cosa": {
+      "source": "MyTestPersonTable",
       "permissions": [
         {
-          "actions": ["create", "read", "update", "delete"],
+          "actions": ["*"],
           "role": "anonymous"
         }
       ]
     }
+
   }
 }
