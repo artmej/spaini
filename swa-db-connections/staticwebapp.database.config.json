@@ -3,7 +3,7 @@
   "data-source": {
     "database-type": "cosmosdb_nosql",
     "options": {
-      "database": "ToDoList",
+      "database": "todolist",
       "schema": "staticwebapp.database.schema.gql"
     },
     "connection-string": "@env('DATABASE_CONNECTION_STRING')"
@@ -25,5 +25,15 @@
       }
     }
   },
-  "entities": {}
+  "entities": {
+    "Item": {
+      "source": "dbo.todolist",
+      "permissions": [
+        {
+          "actions": ["create", "read", "update", "delete"],
+          "role": "anonymous"
+        }
+      ]
+    }
+  }
 }
