@@ -3,7 +3,7 @@
       <h1>Gracias por ponerse en contacto con nosotros.</h1>
       {{ message }}
 
-      <button id="list" v-on:click="list">List</button>
+      <button id="list" onclick="list()">List</button>
     </div>
   </template>
 
@@ -18,26 +18,6 @@ export default {
   async mounted() {
     const { text } = await (await fetch("/api/info")).json();
     this.message = text;
-  },
-  async list() {
-  const query = `
-    {
-      ToDoList {
-        items {
-          id
-          nombre
-        }
-      }
-    }`;
-    
-const endpoint = "/data-api/graphql";
-const response = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query: query })
-});
-const result = await response.json();
-console.table(result.data.people.items);
-}
+  }
 };
 </script>

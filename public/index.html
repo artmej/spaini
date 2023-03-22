@@ -13,5 +13,29 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      async function list() {
+
+const query = `
+{
+      ToDoList {
+        items {
+          id
+          nombre
+        }
+      }
+    }`;
+    
+const endpoint = "/data-api/graphql";
+const response = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: query })
+});
+const result = await response.json();
+console.table(result.data.people.items);
+}
+    </script>
   </body>
+
 </html>
