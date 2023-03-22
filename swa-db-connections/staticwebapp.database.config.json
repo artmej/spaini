@@ -27,7 +27,7 @@
   },
   "entities": {
     "Item": {
-      "source": "dbo.ToDoList",
+      "source": "dbo.Items",
       "permissions": [
         {
           "actions": ["create", "read", "update", "delete"],
