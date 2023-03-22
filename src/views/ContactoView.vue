@@ -18,10 +18,8 @@ export default {
   async mounted() {
     const { text } = await (await fetch("/api/info")).json();
     this.message = text;
-  }
-};
-
-  async function list() {
+  },
+  async list() {
   const query = `
     {
       ToDoList {
@@ -41,5 +39,5 @@ const response = await fetch(endpoint, {
 const result = await response.json();
 console.table(result.data.people.items);
 }
-
+};
 </script>
