@@ -10,3 +10,7 @@ type Item @model {
 }
 
 """
+type Item @model {
+  id: ID
+  nombre: String
+}
