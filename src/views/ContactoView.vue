@@ -22,10 +22,10 @@ export default {
   async list() {
   const query = `
     {
-      people {
+      ToDoList {
         items {
           id
-          Name
+          nombre
         }
       }
     }`;
