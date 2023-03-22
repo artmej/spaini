@@ -3,7 +3,7 @@
       <h1>Gracias por ponerse en contacto con nosotros.</h1>
       {{ message }}
 
-      <button id="list" onclick="list()">List</button>
+      <button id="list" v-on:click="list">List</button>
     </div>
   </template>
 
