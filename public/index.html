@@ -18,8 +18,8 @@
 
 const query = `
 {
-      Items {
-        Item {
+      cosas {
+        items {
           id
           nombre
         }
@@ -33,7 +33,7 @@ const response = await fetch(endpoint, {
     body: JSON.stringify({ query: query })
 });
 const result = await response.json();
-console.table(result.data.items.items);
+console.table(result.data.cosas.items);
 }
     </script>
   </body>
