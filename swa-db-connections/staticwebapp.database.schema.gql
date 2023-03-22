@@ -1,0 +1,12 @@
+
+"""
+Add your CosmosDB NoSQL database schema in this file
+
+For example:
+
+type Item @model {
+  id: ID
+  nombre: String
+}
+
+"""

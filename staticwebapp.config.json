@@ -6,7 +6,7 @@
 	"routes": [
 	  {
 		"route":"/data",
-		"redirect":"/contact",
+		"redirect":"/contacto",
 		"statusCode": 301
 	  },
 	  {
@@ -22,7 +22,7 @@
 		"allowedRoles": ["authenticated"]
 	  },
 	  {
-		"route": "/contact",
+		"route": "/contacto",
 		"allowedRoles": ["authenticated"]
 	  }
 	]
