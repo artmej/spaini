@@ -2,6 +2,8 @@
     <div class="contacto">
       <h1>Gracias por ponerse en contacto con nosotros.</h1>
       {{ message }}
+
+      <button id="list" onclick="list()">List</button>
     </div>
   </template>
 
@@ -18,4 +20,26 @@ export default {
     this.message = text;
   }
 };
+
+async function list() {
+
+const query = `
+    {
+      people {
+        items {
+          id
+          Name
+        }
+      }
+    }`;
+    
+const endpoint = "/data-api/graphql";
+const response = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: query })
+});
+const result = await response.json();
+console.table(result.data.people.items);
+}
 </script>
