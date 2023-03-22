@@ -3,9 +3,9 @@ module.exports = async function (context, req) {
 
     const gql = `
       query getById($id: ID!) {
-        person_by_pk(id: $id) {
+        item_by_pk(id: $id) {
           id
-          Name
+          nombre
         }
       }`;
   
