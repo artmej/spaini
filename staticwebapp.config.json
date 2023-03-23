@@ -5,11 +5,6 @@
 	},
 	"routes": [
 	  {
-		"route":"/data",
-		"redirect":"/contacto",
-		"statusCode": 301
-	  },
-	  {
 		"route": "/login",
 		"redirect": "/.auth/login/github"
 	  },
