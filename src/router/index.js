@@ -19,6 +19,9 @@ const routes = [
     path: '/contacto',
     name: 'contacto',
     component: () => import('../views/ContactoView.vue')
+  },
+  {
+    path: '/graph-api',
   }
 ]
 
