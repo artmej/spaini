@@ -2,5 +2,23 @@
 	"navigationFallback": {
 		"rewrite": "/index.html",
 		"exclude": ["*.{css,sccs,js,png,gif,ico,jpg,svg}"]
-	}
+	},
+	"routes": [
+	  {
+		"route": "/login",
+		"redirect": "/.auth/login/github"
+	  },
+	  {
+		"route": "/logout",
+		"redirect": "/.auth/logut"
+	  },
+	  {
+		"route": "/api/*",
+		"allowedRoles": ["authenticated"]
+	  },
+	  {
+		"route": "/contacto",
+		"allowedRoles": ["authenticated"]
+	  }
+	]
 }
