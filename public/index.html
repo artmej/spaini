@@ -14,12 +14,27 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
     <script>
-      async function list() {
-        const endpoint = '/data-api/rest/Person';
-        const response = await fetch(endpoint);
-        const data = await response.json();
-        console.table(data.value);
+    async function list() {
+
+const query = `
+    {
+      people {
+        items {
+          Id
+          Name
+        }
       }
+    }`;
+
+const endpoint = "/data-api/graphql";
+const response = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: query })
+});
+const result = await response.json();
+console.table(result.data.people.items);
+    }
     </script>
   </body>
 

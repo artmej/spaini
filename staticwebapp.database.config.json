@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dataapibuilder.azureedge.net/schemas/v0.5.34/dab.draft.schema.json",
+  "$schema": "https://dataapibuilder.azureedge.net/schemas/latest/dab.draft.schema.json",
   "data-source": {
     "database-type": "mssql",
     "options": {
@@ -30,7 +30,7 @@
   },
   "entities": {
     "Person": {
-      "source": "dbo.MyTestPersonTable",
+      "source": "MyTestPersonTable",
       "permissions": [
         {
           "actions": ["*"],
