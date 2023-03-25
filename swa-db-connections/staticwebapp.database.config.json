@@ -29,7 +29,7 @@
     }
   },
   "entities": {
-    "Person": {
+    "Persona": {
       "source": "PersonasTabla",
       "permissions": [
         {
