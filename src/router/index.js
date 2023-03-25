@@ -22,7 +22,10 @@ const routes = [
   },
   {
     path: '/graph-api',
-  }
+  },
+  {
+    path: '/img/icons',
+  },
 ]
 
 const router = createRouter({

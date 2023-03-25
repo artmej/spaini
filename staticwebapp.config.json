@@ -1,7 +1,7 @@
 {
 	"navigationFallback": {
 		"rewrite": "/index.html",
-		"exclude": ["*.{css,sccs,js,png,gif,ico,jpg,svg}"]
+		"exclude": ["*.{css,sccs,js,png,gif,ico,jpg,svg}","img/icons/*{png,gif,ico,jpg,svg}"]
 	},
 	"routes": [
 	  {
@@ -21,4 +21,5 @@
 		"allowedRoles": ["authenticated"]
 	  }
 	]
+
 }
